@@ -93,6 +93,9 @@
 ;; activate whitespace-mode to view all whitespace characters
 (global-set-key (kbd "C-c w") 'whitespace-mode)
 
+;; set for load-file
+(global-set-key (kbd "C-c l") 'load-file)
+
 ;; show unncessary whitespace that can mess up your diff
 (add-hook 'prog-mode-hook (lambda () (interactive) (setq show-trailing-whitespace 1)))
 
@@ -150,3 +153,62 @@
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(safe-local-variable-values (quote ((indent-tabs-mode . true)))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )
+
+
+;; helm-cmd-t
+(push "~/.emacs.d/elpa/helm-cmd-t-20140828.412" load-path)
+(require 'helm-config)
+(require 'helm-cmd-t)
+(global-set-key (kbd "M-t") 'helm-cmd-t)
+(setq helm-ff-lynx-style-map nil helm-input-idle-delay 0.1 helm-idle-delay 0.1)
+
+
+
+;; for some ido
+(require 'ido)
+;; Improved flex matching
+(require 'flx-ido)
+
+(setq ido-everywhere nil
+      ido-enable-flex-matching t
+      ido-create-new-buffer 'always
+      ido-file-extensions-order '(".c" ".cpp" ".cxx" ".h" ".hpp" ".java" ".js" ".el" ".xml")
+      ido-use-filename-at-point 'guess
+      ido-use-faces t
+    )
+(ido-mode 'buffer)
+
+;; Vertical completion menu
+(require 'ido-vertical-mode)
+(ido-vertical-mode)
+
+;; IDO support pretty much everwhere, including eclim-java-implement
+(require 'ido-ubiquitous)
+(ido-ubiquitous)
+
+;; General project support
+(require 'projectile)
+(projectile-global-mode)
+(setq projectile-enable-caching nil
+    projectile-globally-ignored-directories '("target")
+    )
+(global-set-key "\C-cf" 'projectile-find-file)
+;(global-set-key (kbd "C-x C-f") 'projectile-find-file-dwim)
+
+;; Enhanced M-x
+(require 'smex)
+(global-set-key (kbd "C-x x") 'smex)
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
+

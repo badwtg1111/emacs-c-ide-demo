@@ -1,0 +1,1 @@
+("~/.emacs.d/" "~/android_src_google/android/frameworks/av/" "~/workdir/test_tiff/jni/")
