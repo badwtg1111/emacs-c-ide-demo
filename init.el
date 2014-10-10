@@ -158,7 +158,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(safe-local-variable-values (quote ((indent-tabs-mode . true)))))
+ '(custom-enabled-themes (quote (monokai)))
+ '(custom-safe-themes (quote ("57f8801351e8b7677923c9fe547f7e19f38c99b80d68c34da6fa9b94dc6d3297" "5ea20171762b3f9682fbf507ee4b4018ce7b6cc65415fa99799a125f112b2cdb" default)))
+ '(hl-paren-background-colors (quote ("#2492db" "#95a5a6" nil)))
+ '(hl-paren-colors (quote ("#ecf0f1" "#ecf0f1" "#c0392b")))
+ '(safe-local-variable-values (quote ((indent-tabs-mode . true))))
+ '(sml/active-background-color "#34495e")
+ '(sml/active-foreground-color "#ecf0f1")
+ '(sml/inactive-background-color "#dfe4ea")
+ '(sml/inactive-foreground-color "#34495e"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -211,4 +219,101 @@
 (require 'smex)
 (global-set-key (kbd "C-x x") 'smex)
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
+
+;; theme monokai from textmate
+(load-theme 'monokai t)
+
+;; for shell completion
+;(require 'shell-command) (shell-command-completion-mode)
+
+
+
+
+;; 标题栏显示文件路径
+(setq frame-title-format
+'("%S" (buffer-file-name "%f"
+(dired-directory dired-directory "%b"))))
+
+;;设置光标为线条状
+(setq-default cursor-type 'bar)
+
+;;在buffer左侧显示行号
+(dolist (hook (list
+'c-mode-hook
+'c++-mode-hook
+'emacs-lisp-mode-hook
+'lisp-interaction-mode-hook
+'lisp-mode-hook
+'emms-playlist-mode-hook
+'java-mode-hook
+'asm-mode-hook
+'haskell-mode-hook
+'rcirc-mode-hook
+'emms-lyrics-mode-hook
+'erc-mode-hook
+'sh-mode-hook
+'makefile-gmake-mode-hook
+))
+(add-hook hook (lambda () (linum-mode 1))))
+ 
+;;高亮当前行
+(require 'hl-line)
+(global-hl-line-mode t)
+ 
+;;在标题栏显示buffer的名字(默认不显示)
+;(setq frame-title-format "%b@emacs")
+
+
+;; bash completion
+;;----------------------------------------------------------------------------
+;; Venom's Emacs24 Configuration
+;; Website : http://venmos.com
+;; Contact : me[at]venmos.com
+;;----------------------------------------------------------------------------
+
+;;----------------------------------------------------------------------------
+;; Enable bash-completion ~/.emacs.d/plugin/emacs-bash-completion
+;;----------------------------------------------------------------------------
+;(add-to-list 'load-path "~/.emacs.d/plugin/emacs-bash-completion")
+(require 'bash-completion)
+(bash-completion-setup)
+
+(autoload 'bash-completion-dynamic-complete 
+  "bash-completion"
+  "BASH completion hook")
+(add-hook 'shell-dynamic-complete-functions
+  'bash-completion-dynamic-complete)
+(add-hook 'shell-command-complete-functions
+  'bash-completion-dynamic-complete)
+
+(provide 'init-bash-completion)
+
+;; autojump
+(require 'eshell-autojump)
+
+(eval-after-load 'eshell
+  '(require 'eshell-autojump nil t))
+
+;;; auto install el-get
+;(add-to-list 'load-path "~/.emacs.d/el-get/el-get")
+
+;(unless (require 'el-get nil 'noerror)
+  ;(with-current-buffer
+      ;(url-retrieve-synchronously
+       ;"https://raw.github.com/dimitri/el-get/master/el-get-install.el")
+    ;(let (el-get-master-branch)
+      ;(goto-char (point-max))
+      ;(eval-print-last-sexp))))
+
+;(el-get 'sync)
+
+;;;for el-get install some packages
+;(setq my-el-get-packages
+;'(
+    ;color-theme
+    ;;; Any package you like
+    ;))
+
+;(el-get 'sync my-el-get-packages)
+
 
