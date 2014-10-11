@@ -22,3 +22,105 @@ pwd
 pwd
 cls
 clear
+pwd
+cd =
+ls
+cd ~
+cd qc4.4_20140513/frameworks/av/media/libstagefright/
+cd ~
+j libstagepwd
+pwd
+ls
+j libstage
+pwd
+cd =
+cd =
+cd -3
+cd -2
+pwd
+cd -2
+cd =
+cd -1
+cd =
+cd libstagefright/
+pwd
+cd =
+cd 2
+cd -2
+cd =
+cd 0
+cd -0
+cd =
+cd -
+cd =
+cd -2
+cd =
+cd -
+pwd
+clear
+pwd
+pwd
+ls
+ls
+cd ../..
+cd =
+cd 2
+cd -2
+cd =
+cd -2
+cd =
+cd -1
+cd -
+cd -0
+cd =
+cd ..
+cd =
+cd -2
+pwd
+cd ../..
+ls
+pwd
+ls
+cd -
+cd =
+pwd
+pwd
+pwd
+clear
+pwd
+cd ~/android_src_google/android/frameworks/av/media/libstagefright/
+ls
+pwd
+git status
+cd =libstage
+cd =media
+cd ..
+cd =media/
+cd =
+cd =
+cd =
+cd =
+emacs SurfaceMediaSource.cpp
+7: /home/chenchunsheng
+ls
+pwd
+pwd
+pwd
+ls
+j android_src
+cd =
+cd ~/android_src_google/
+pwd
+ll
+ll
+ll
+ll
+ll: command not foundcd =
+cd =
+cd -0
+ls
+pwd
+cls
+pwd
+pwd
+pwd

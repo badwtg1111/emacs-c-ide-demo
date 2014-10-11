@@ -1,6 +1,10 @@
 (require 'package)
 (add-to-list 'package-archives
 	     '("melpa" . "http://melpa.milkbox.net/packages/") t)
+
+(push '("marmalade" . "http://marmalade-repo.org/packages/")
+    package-archives )
+
 (package-initialize)
 
 (setq inhibit-startup-message t)
@@ -316,4 +320,16 @@
 
 ;(el-get 'sync my-el-get-packages)
 
+;; for tabbar
+(require 'tabbar)
+(tabbar-mode)
+(define-prefix-command 'lwindow-map)
+(global-set-key (kbd "<M-up>") 'tabbar-backward-group)
+(global-set-key (kbd "<M-down>") 'tabbar-forward-group)
+(global-set-key (kbd "<M-left>") 'tabbar-backward)
+(global-set-key (kbd "<M-right>") 'tabbar-forward)
+
+;; for vi mode
+(require 'evil)
+(evil-mode 1)
 

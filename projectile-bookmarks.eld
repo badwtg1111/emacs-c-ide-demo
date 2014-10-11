@@ -1,1 +1,1 @@
-("~/.emacs.d/" "~/qc4.4_20140513/frameworks/av/" "~/android_src_google/android/frameworks/av/" "~/android_src_google/android/frameworks/support/" "~/workdir/test_tiff/jni/")
+("~/.emacs.d/" "~/android_src_google/android/frameworks/av/" "~/qc4.4_20140513/frameworks/av/" "~/android_src_google/android/frameworks/support/" "~/workdir/test_tiff/jni/")
