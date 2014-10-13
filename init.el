@@ -241,24 +241,6 @@
 ;;设置光标为线条状
 (setq-default cursor-type 'bar)
 
-;;在buffer左侧显示行号
-(dolist (hook (list
-'c-mode-hook
-'c++-mode-hook
-'emacs-lisp-mode-hook
-'lisp-interaction-mode-hook
-'lisp-mode-hook
-'emms-playlist-mode-hook
-'java-mode-hook
-'asm-mode-hook
-'haskell-mode-hook
-'rcirc-mode-hook
-'emms-lyrics-mode-hook
-'erc-mode-hook
-'sh-mode-hook
-'makefile-gmake-mode-hook
-))
-(add-hook hook (lambda () (linum-mode 1))))
  
 ;;高亮当前行
 (require 'hl-line)
@@ -383,4 +365,65 @@ nil 0 nil "_NET_WM_STATE" 32
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
 ;(helm-projectile-on)
+
+;; highlight indention mode
+;(require 'highlight-indentation)
+;(set-face-background 'highlight-indentation-face "#e3e3d3")
+;(set-face-background 'highlight-indentation-current-column-face "#c3b3b3")
+;(add-hook 'c-mode-hook '(highlight-indentatoin-mode t))
+;(add-hook 'c-mode-hook '(highlight-indentatoin-current-column-mode t))
+;(add-hook 'c++-mode-hook '(highlight-indentatoin-mode t))
+;(add-hook 'c++-mode-hook '(highlight-indentatoin-current-column-mode t))
+;(add-hook 'java-mode-hook '(highlight-indentatoin-mode t))
+;(add-hook 'java-mode-hook '(highlight-indentatoin-current-column-mode t))
+;(dolist (hook1 (list
+;'c-mode-hook
+;'c++-mode-hook
+;'emacs-lisp-mode-hook
+;'lisp-interaction-mode-hook
+;'lisp-mode-hook
+;'emms-playlist-mode-hook
+;'java-mode-hook
+;'asm-mode-hook
+;'haskell-mode-hook
+;'rcirc-mode-hook
+;'emms-lyrics-mode-hook
+;'erc-mode-hook
+;'sh-mode-hook
+;'makefile-gmake-mode-hook
+;))
+;(add-hook hook1 (lambda () (highlight-indentation-mode 1)))
+;(add-hook hook1 (lambda () (highlight-indentation-current-column-mode 1)))
+;)
+
+(evilnc-default-hotkeys)
+
+;;在buffer左侧显示行号
+(dolist (hook (list
+'c-mode-hook
+'c++-mode-hook
+'emacs-lisp-mode-hook
+'lisp-interaction-mode-hook
+'lisp-mode-hook
+'emms-playlist-mode-hook
+'java-mode-hook
+'asm-mode-hook
+'haskell-mode-hook
+'rcirc-mode-hook
+'emms-lyrics-mode-hook
+'erc-mode-hook
+'sh-mode-hook
+'makefile-gmake-mode-hook
+))
+(add-hook hook (lambda () (linum-mode 1))))
+
+;; for git
+(require 'magit-gerrit)
+
+;; if remote url is not using the default gerrit port and
+;; ssh scheme, need to manually set this variable
+;(setq-default magit-gerrit-ssh-creds "chenchunsheng@http://172.16.0.9:8080/")
+
+;; if necessary, use an alternative remote instead of 'origin'
+(setq-default magit-gerrit-remote "smartisan")
 

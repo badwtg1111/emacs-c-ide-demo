@@ -1,6 +1,3 @@
-pwd
-ls
-j libstage
 j ls
 ls
 pwd
@@ -124,3 +121,8 @@ cls
 pwd
 pwd
 pwd
+ls
+mmp
+cd =
+cd ~/qc4.4_20140513/
+. build/envsetup.sh 
