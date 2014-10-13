@@ -330,12 +330,11 @@
 (global-set-key (kbd "<M-right>") 'tabbar-forward)
 
 ;; for vi mode
-;(require 'evil)
-;(evil-mode 1)
-
-;(add-hook 'evil-insert-state-entry-hook 'evil-emacs-state)
-;(define-key evil-emacs-state-map (kbd "C-[") 'evil-normal-state)
-;(define-key evil-visual-state-map (kbd "i") 'evil-emacs-state)
+(require 'evil)
+(evil-mode 1)
+(add-hook 'evil-insert-state-entry-hook 'evil-emacs-state)
+(define-key evil-emacs-state-map (kbd "C-[") 'evil-normal-state)
+(define-key evil-visual-state-map (kbd "i") 'evil-emacs-state)
 
 
 ;;不要生成临时文件
