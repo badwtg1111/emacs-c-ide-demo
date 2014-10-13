@@ -330,6 +330,58 @@
 (global-set-key (kbd "<M-right>") 'tabbar-forward)
 
 ;; for vi mode
-(require 'evil)
-(evil-mode 1)
+;(require 'evil)
+;(evil-mode 1)
+
+;(add-hook 'evil-insert-state-entry-hook 'evil-emacs-state)
+;(define-key evil-emacs-state-map (kbd "C-[") 'evil-normal-state)
+;(define-key evil-visual-state-map (kbd "i") 'evil-emacs-state)
+
+
+;;不要生成临时文件
+;(setq-default make-backup-files nil)
+;不生成 #filename# 临时文件
+;(setq auto-save-default nil)
+
+;; store all backup and autosave files in the tmp dir
+;(setq backup-directory-alist
+      ;`((".*" . ,temporary-file-directory)))
+;(setq auto-save-file-name-transforms
+      ;`((".*" ,temporary-file-directory t)))
+(setq backup-directory-alist
+      '((".*" . "~/emacs_tmp")))
+(setq auto-save-file-name-transforms
+      '((".*" "~/emacs_tmp" t)))
+
+;最大化
+(defun my-maximized ()
+(interactive)
+(x-send-client-message
+nil 0 nil "_NET_WM_STATE" 32
+'(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0))
+(x-send-client-message
+nil 0 nil "_NET_WM_STATE" 32
+'(2 "_NET_WM_STATE_MAXIMIZED_VERT" 0))
+)
+;启动时最大化
+;(my-maximized)
+
+;(require 'sr-speedbar)
+;(setq sr-speedbar-right-side nil)
+;(setq sr-speedbar-width 25)
+;(setq dframe-update-speed t)
+;(global-set-key (kbd "<f3>") (lambda()
+          ;(interactive)
+          ;(sr-speedbar-toggle)))
+
+(require 'dirtree)
+
+(require 'neotree)
+(global-set-key [f3] 'neotree-toggle)
+
+(xterm-mouse-mode)
+
+(projectile-global-mode)
+(setq projectile-completion-system 'helm)
+;(helm-projectile-on)
 
