@@ -152,8 +152,15 @@
 
 ;; Package: projejctile
 (require 'projectile)
-(projectile-global-mode)
+(projectile-global-mode t)
 (setq projectile-enable-caching t)
+(global-set-key "\C-cf" 'projectile-find-file)
+;(global-set-key (kbd "C-x C-f") 'projectile-find-file-dwim)
+(let ((ack_path "~/bin/ack"))
+  (if (file-exists-p ack_path)
+      (setq ack-and-a-half-executable ack_path)
+   )
+ )
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
@@ -210,14 +217,6 @@
 (require 'ido-ubiquitous)
 (ido-ubiquitous)
 
-;; General project support
-(require 'projectile)
-(projectile-global-mode)
-(setq projectile-enable-caching nil
-    projectile-globally-ignored-directories '("target")
-    )
-(global-set-key "\C-cf" 'projectile-find-file)
-;(global-set-key (kbd "C-x C-f") 'projectile-find-file-dwim)
 
 ;; Enhanced M-x
 (require 'smex)
@@ -364,7 +363,8 @@ nil 0 nil "_NET_WM_STATE" 32
 
 (projectile-global-mode)
 (setq projectile-completion-system 'helm)
-;(helm-projectile-on)
+(require 'helm-projectile)
+(helm-projectile-on)
 
 ;; highlight indention mode
 ;(require 'highlight-indentation)
@@ -426,4 +426,19 @@ nil 0 nil "_NET_WM_STATE" 32
 
 ;; if necessary, use an alternative remote instead of 'origin'
 (setq-default magit-gerrit-remote "smartisan")
+
+(global-set-key (kbd "C-SPC") 'nil)
+;(global-set-key (kbd "C-..") 'nil)
+
+;(require 'graphene)
+
+(require 'helm-config)
+(require 'helm-ack)
+
+(custom-set-variables
+ ;; Does not insert '--type' option
+ '(helm-ack-base-command "ack -iH")
+ '(helm-ack-auto-set-filetype nil)
+ ;; Insert "thing-at-point 'symbol" as search pattern
+ '(helm-ack-thing-at-point 'symbol))
 

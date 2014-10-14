@@ -1,0 +1,40 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Tue Oct 14 11:29:27 2014
+;; Desktop file format version 206
+;; Emacs version 24.3.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist (list (list "zygospore-windows-time-machine" "Unprintable entity" (let ((mk (make-marker))) (add-hook 'desktop-delay-hook (list 'lambda '() (list 'set-marker mk 1188 (get-buffer "*SPEEDBAR*")))) mk))))
+(setq file-name-history '("/home/chenchunsheng/qc4.4_20140513/frameworks/av/media/libstagefright/AwesomePlayer.cpp"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/chenchunsheng/qc4.4_20140513/frameworks/av/media/libstagefright/AwesomePlayer.cpp"
+  "AwesomePlayer.cpp"
+  'c++-mode
+  '(abbrev-mode visual-line-mode global-visual-line-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode function-args-mode company-mode projectile-mode global-auto-revert-mode magit-auto-revert-mode project-persist-mode linum-mode flycheck-mode highlight-changes-mode hs-minor-mode)
+  7838
+  '(1031 nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines) (highlight-changes-mode . t)))
+
+(desktop-create-buffer 206
+  "/home/chenchunsheng/qc4.4_20140513/frameworks/av/media/libstagefright/MediaCodec.cpp"
+  "MediaCodec.cpp"
+  'c++-mode
+  '(abbrev-mode visual-line-mode global-visual-line-mode helm-mode helm-gtags-mode volatile-highlights-mode ws-butler-mode undo-tree-mode yas-minor-mode smartparens-mode anzu-mode function-args-mode company-mode projectile-mode global-auto-revert-mode magit-auto-revert-mode project-persist-mode linum-mode flycheck-mode highlight-changes-mode hs-minor-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((show-trailing-whitespace . 1) (indent-tabs-mode) (buffer-file-coding-system . undecided-unix) (truncate-lines) (highlight-changes-mode . t)))
+
