@@ -1933,7 +1933,7 @@
 	 [(0 0 1)
 	  nil "Mode for automatically handle multiple tags files with Mactag rubygem" single])
  (macrostep .
-	    [(0 6)
+	    [(0 8)
 	     nil "interactive macro stepper for Emacs Lisp" single])
  (macro-utils .
 	      [(1 0)
@@ -3175,7 +3175,7 @@
 		   (3 0)))
 		 "Extra functions for emms-mark-mode and emms-tag-edit-mode" single])
  (emmet-mode .
-	     [(1 0 5)
+	     [(1 0 10)
 	      nil "Unofficial Emmet's support for emacs" single])
  (emamux .
 	 [(0 1)

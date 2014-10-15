@@ -1,0 +1,6 @@
+[submodule "download/fasd"]
+	path = download/fasd
+	url = git@github.com:clvv/fasd.git
+[submodule "download/fasd-shell"]
+	path = download/fasd-shell
+	url = git@gitlab.com:emacs-stuff/fasd-shell.git

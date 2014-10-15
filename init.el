@@ -442,3 +442,22 @@ nil 0 nil "_NET_WM_STATE" 32
  ;; Insert "thing-at-point 'symbol" as search pattern
  '(helm-ack-thing-at-point 'symbol))
 
+;; for exec path from shell 
+
+;(exec-path-from-shell-copy-env "PYTHONPATH")
+(when (memq window-system '(mac ns))
+   (exec-path-from-shell-initialize))
+;make shell clickable
+(add-hook 'shell-mode-hook 'compilation-shell-minor-mode)
+
+
+(global-set-key (kbd "C-h C-/") 'fasd-find-file)
+(global-fasd-mode 1)
+
+
+;; (setq fasd-completing-read-function nil)
+
+
+(add-to-list 'load-path "~/.emacs.d/download/fasd-shell")
+(require 'fasd-shell)
+(fasd-shell-mode t)

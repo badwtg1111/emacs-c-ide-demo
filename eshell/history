@@ -1,11 +1,3 @@
-j ls
-ls
-pwd
-pwd
-pwd
-pwd
-pwd
-pwd
 pwd
 pwd
 pwd
@@ -126,3 +118,11 @@ mmp
 cd =
 cd ~/qc4.4_20140513/
 . build/envsetup.sh 
+export
+export
+export
+echo PATH
+echo $PATH
+echo AUTOJUMP_HOME
+echo $AUTOJUMP_HOME
+cd =
