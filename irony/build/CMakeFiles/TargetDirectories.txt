@@ -1,0 +1,1 @@
+/home/chenchunsheng/.emacs.d/irony/build/src/CMakeFiles/irony-server.dir

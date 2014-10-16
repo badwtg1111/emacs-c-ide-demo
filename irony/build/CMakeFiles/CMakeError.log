@@ -1,0 +1,16 @@
+Performing C++ SOURCE FILE Test HAS_STDCXX11 failed with the following output:
+Change Dir: /home/chenchunsheng/.emacs.d/irony/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec.dir/build.make CMakeFiles/cmTryCompileExec.dir/build
+make[1]: Entering directory `/home/chenchunsheng/.emacs.d/irony/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/chenchunsheng/.emacs.d/irony/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building CXX object CMakeFiles/cmTryCompileExec.dir/src.cxx.o
+/usr/bin/c++    -DHAS_STDCXX11   -std=c++11 -o CMakeFiles/cmTryCompileExec.dir/src.cxx.o -c /home/chenchunsheng/.emacs.d/irony/build/CMakeFiles/CMakeTmp/src.cxx
+cc1plus: error: unrecognized command line option ‘-std=c++11’
+make[1]: Leaving directory `/home/chenchunsheng/.emacs.d/irony/build/CMakeFiles/CMakeTmp'
+make[1]: *** [CMakeFiles/cmTryCompileExec.dir/src.cxx.o] Error 1
+make: *** [cmTryCompileExec/fast] Error 2
+
+Source file was:
+int main() { return 0;}

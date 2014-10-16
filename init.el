@@ -461,3 +461,36 @@ nil 0 nil "_NET_WM_STATE" 32
 (add-to-list 'load-path "~/.emacs.d/download/fasd-shell")
 (require 'fasd-shell)
 (fasd-shell-mode t)
+
+(require 'irony)
+;(add-hook 'java-mode-hook 'irony-mode)
+(add-hook 'c++-mode-hook 'irony-mode)
+(add-hook 'c-mode-hook 'irony-mode)
+(add-hook 'objc-mode-hook 'irony-mode)
+
+;; replace the `completion-at-point' and `complete-symbol' bindings in
+;; irony-mode's buffers by irony-mode's function
+(defun my-irony-mode-hook ()
+  (define-key irony-mode-map [remap completion-at-point]
+    'irony-completion-at-point-async)
+  (define-key irony-mode-map [remap complete-symbol]
+    'irony-completion-at-point-async))
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+
+(require 'company-irony)
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+;; (optional) adds CC special commands to `company-begin-commands' in order to
+;; trigger completion at interesting places, such as after scope operator
+;;     std::|
+(add-hook 'irony-mode-hook 'company-irony-setup-begin-commands)
+
+(require 'company-c-headers)
+(add-to-list 'company-backends 'company-c-headers)
+
+(require 'highlight-symbol)
+(global-set-key [(control f4)] 'highlight-symbol-at-point)
+(global-set-key [f4] 'highlight-symbol-next)
+(global-set-key [(shift f4)] 'highlight-symbol-prev)
+(global-set-key [(meta f4)] 'highlight-symbol-query-replace)
