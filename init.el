@@ -494,3 +494,18 @@ nil 0 nil "_NET_WM_STATE" 32
 (global-set-key [f4] 'highlight-symbol-next)
 (global-set-key [(shift f4)] 'highlight-symbol-prev)
 (global-set-key [(meta f4)] 'highlight-symbol-query-replace)
+
+;; ac-irony
+
+;(add-to-list 'load-path "~/.emacs.d/download/ac-irony")
+;(require 'ac-irony)
+;(defun my-ac-irony-setup ()
+  ;;; be cautious, if yas is not enabled before (auto-complete-mode 1), overlays
+  ;;; *may* persist after an expansion.
+  ;(yas-minor-mode 1)
+  ;(auto-complete-mode 1)
+
+  ;(add-to-list 'ac-sources 'ac-source-irony)
+  ;(define-key irony-mode-map (kbd "M-RET") 'ac-complete-irony-async))
+
+;(add-hook 'irony-mode-hook 'my-ac-irony-setup)

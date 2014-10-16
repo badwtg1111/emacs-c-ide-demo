@@ -4,3 +4,6 @@
 [submodule "download/fasd-shell"]
 	path = download/fasd-shell
 	url = git@gitlab.com:emacs-stuff/fasd-shell.git
+[submodule "download/ac-irony"]
+	path = download/ac-irony
+	url = git@github.com:Sarcasm/ac-irony.git
